@@ -16,9 +16,9 @@ A base de dados do [Abuseipdb.com](https://www.abuseipdb.com/) será usada para 
 
 #### Dividindo o entregável.
   
-  - [x] [Conseguir investigar](https://github.com/usrbinbrain/fiap-python-02/readme/blob/main/api_readme.md), conectar e autenticar o código na API do abuseipdb.
+  - [x] [Conseguir investigar](https://github.com/usrbinbrain/fiap-python-02/blob/main/readme/api_readme.md#controlando-a-api-do-abuseipdbcom), conectar e autenticar o código na API do abuseipdb.
 
-  - [x] [Ter o que investigar](https://github.com/usrbinbrain/fiap-python-02/readme/blob/main/ip_readme.md), extraindo endereços IP potencialmente maliciosos de interações do sistema operacional.
+  - [x] [Ter o que investigar](https://github.com/usrbinbrain/fiap-python-02/blob/main/readme/ip_readme.md#rastreando-dados-com-regex-nos-logs-do-sistema-operacional), extraindo endereços IP potencialmente maliciosos de interações do sistema operacional.
 
   - [ ] Conseguir apresentar, agrupar resultados em um canal de mensagens.
   
