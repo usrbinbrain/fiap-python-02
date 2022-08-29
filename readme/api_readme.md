@@ -10,17 +10,15 @@
 
 <details><summary>...</summary>
     
-Para que o código Python possa se conectar na API do abuseipdb, vamos usar a biblioteca externa `requests`, usada para solicitações **HTTP**(**S**).
-    
-A bibilioteca nativa `json` é um encoder/decoder que permite fazer imtercâmbio de dados no formato **JSON** (**JavaScript Object Notation**).
+Para que o código Python possa se conectar na API do abuseipdb, vamos usar a biblioteca externa `requests`, usada para solicitações **HTTP**(**S**), também vamos usar a bibilioteca nativa `json` que é um encoder/decoder que permite fazer intercâmbio de dados no formato **JSON** (**JavaScript Object Notation**).
 
-Para instalar a biblioteca externa `requests` e o gerenciador de pacotes **pip3** (**python3-pip**) no seu Linux, você precisa executar a linha de comando abaixo.
+Para instalar a biblioteca externa `requests` é necessário ter o gerenciador de pacotes **pip3** (**python3-pip**) no seu sistema operacional, você pode executar a linha de comando abaixo para que ambos.
     
 ```bash
 apt-get update && apt-get install python3-pip -y && pip3 install requests
 ```
 
-O trecho de código abaixo realiza a requisição autenticada na [API](https://docs.abuseipdb.com/#check-endpoint) do [abuseipdb](https://www.abuseipdb.com/) e exibe o conteúdo da resposta.
+O trecho de código abaixo realiza a requisição autenticada na [API](https://docs.abuseipdb.com/#check-endpoint) do [abuseipdb](https://www.abuseipdb.com/) e exibe o conteúdo respondido.
 
 ```python
 #!/usr/bin/env python3
@@ -57,9 +55,9 @@ print(json.dumps(resposta_api, indent=4, sort_keys=True))
 
 <details><summary>...</summary>
 
-Os códigos das requsições devem ser tradados para permitir a criação de instruções para cada tipo de resposta possível.
+Os códigos das requisições http devem ser tradados para permitir a criação de instruções para cada tipo de resposta possível.
 
-Aqui o script só vai prosseguir se o **código respondido** pela API for `200`, que indica que a requisição foi bem sucedida.
+Aqui o script só vai prosseguir se o **código http respondido** pela API for `200`, que indica que a requisição foi bem sucedida.
 
 ```python
 #!/usr/bin/env python3
@@ -107,7 +105,7 @@ print(json.dumps(resposta_api, indent=4, sort_keys=True))
 
 <details><summary>...</summary>
 
-Agora podemos salvar determinados dados da resposta em variaveis, essa seleção de dados é feita obedecendo a **estrutura** dos dados da resposta.
+Agora podemos salvar determinados dados da resposta em variáveis, essa seleção de dados é feita obedecendo a **estrutura** dos dados da resposta.
 
 Para selecionar um determinado dado na resposta da API, podemos usar a mesma forma de como selecionamos um dado em uma estrutura de **dicionários** e **listas**.
 
@@ -168,9 +166,9 @@ print(f"O IP {IP_ALVO} [{domain_ip}] ({pais_ip}) possui {total_reports} reports!
 
 <details><summary>...</summary>
 
-Como já temos o fluxo da resposta da API do Abuseidb, podemos remover a biblioteca `json` e as linhas que estavamos usando para exibir informações de orientação na tela.
+Como já temos o fluxo dos dados da resposta da API do Abuseidb, podemos remover a biblioteca `json` e as linhas que estavamos usando para exibir informações de orientação.
 
-No trecho de código abaixo o python verifica se o IP verificado tem determinada quantidade de reports de atividade maliciosa, diferentes padrões de textos são exibidos caso o IP tenha ou não reports na base de dados do Abuseipdb.
+No trecho de código abaixo o python verifica se o IP tem determinada quantidade de relatos de atividade maliciosa, diferentes padrões de textos são exibidos caso o IP tenha ou não denúncias na base de dados do Abuseipdb.
 
 ```python
 #!/usr/bin/env python3
@@ -225,10 +223,10 @@ else:
     print(f"O IP {IP_ALVO} esta integro!")
 ```
 
-Assim temos o nosso código python que realiza os seguintes passos:
+Assim temos o código python que realiza os seguintes passos:
 
-- [x] Request autenticado na API do Abuseipdb.
-- [x] Identifica problemas com a credencial da API.
+- [x] Consultas autenticadas na API do Abuseipdb.
+- [x] Identifica problemas com a chave da API.
 - [x] Verifica o histórico malicioso de IPv4 público.
 - [x] Diferencia endereços IPv4 com e sem histórico malicioso.
     
