@@ -10,9 +10,9 @@
   <img alt="Slack" src="https://cdn-icons-png.flaticon.com/512/2111/2111615.png" title="Slack" width="3%">
 </p>
 
-Nesse projeto vamos usar bibliotecas externas e internas do Python, o código será capaz de extrair endereços IPv4 de logs do sistema operacional e realizar uma consulta no histórico público desses endereços IP.
+Esse projeto propõe extrair e identificar endereços IP (públicos) que interagiram com o serviço SSH de um servidor Linux (**systemd**), a base de dados do [Abuseipdb.com](https://www.abuseipdb.com/) será usada para pesquisa de histórico do endereço IP, as consultas são realizadas via requisições autenticadas, para que esse código funcione corretamente é necessário ter uma chave de API válida do abuseipdb.
 
-A base de dados do [Abuseipdb.com](https://www.abuseipdb.com/) será usada para pesquisa de histórico do endereço IP, as consultas são realizadas via requisições autenticadas, para que esse código funcione corretamente é necessário ter uma chave de API válida do abuseipdb.
+Nesse projeto vamos usar bibliotecas externas e internas do Python, o código será capaz de extrair endereços IPv4 de logs do sistema operacional e realizar uma consulta no histórico público desses endereços IP.
 
 #### Dividindo o entregável.
   
