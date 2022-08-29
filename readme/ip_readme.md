@@ -10,9 +10,9 @@
 
 <details><summary>...</summary>
   
-Para obter o que investigar, vamos usar as bibliotecas nativas `subprocess` permite o sitema operacional gere novos processos e crie fluxos de entrada/saída/erro, a biblioteca `re`, que permite aplicar regex para realizar buscas, e a biblioteca `ipaddress`, que nos permite trabalhar com endereçamento IPv4.
+Para obter os endereços IPv4 públicos para análise, vamos usar as bibliotecas nativas `subprocess` que permite o python gerar novos processos e crie fluxos de entrada/saída/erro no sistema operacional, a biblioteca `re` permitindo aplicar regex para realizar buscas orientadas em padrões de texto, e a biblioteca `ipaddress`, que permite o python trabalhar com endereçamentos IPv4.
 
-Assim podemos interagir com a camada de S.O. e extrair endereços IP da saída de comandos, nesse primeiro trecho de código a comando **`journalctl`** é executado e tem a saída exibida.
+Assim podemos interagir com a camada de S.O. e extrair endereços IP da saída de comandos, nesse primeiro trecho de código a comando **`journalctl -u ssh --no-pager`** é executado e tem a saída exibida.
 
 ```python
 #!/usr/bin/env python3
@@ -33,7 +33,7 @@ print(resultado_comando.stdout)
     
 <details><summary>...</summary>
 
-Adicionando a biblioteca `re`, podemos usar expreções regulares (regex) para localizar padrões de textos, nesse exemplo de regex, estamos buscando por padrões de números no formato de endereços IP.
+Adicionando a biblioteca `re`, podemos usar expreções regulares (regex) para localizar padrões de textos, nesse exemplo de regex estamos buscando por padrões de texto no formato de endereços IP.
 
 O site [regex101](https://regex101.com/) pode ajudar muito na construção e entendimento de uma expressão regex.
 
@@ -96,9 +96,9 @@ print(lista_ip_sem_duplicados)
     
 <details><summary>...</summary>
 
-Agora que temos uma lista de endereços IP, vamos criar uma estrutura de repetição conhecida como loop, vamos usar o loop `for` para tratar cada um dos enderecos IP.
+Agora que temos uma lista de endereços IP, vamos criar uma estrutura de repetição conhecida como **loop**, vamos usar o loop `for` para tratar cada um dos enderços IP.
 
-Nesse exemplo o loop vai exibir cada um dos endereços IP formatado em um padrão de texto.
+Nesse exemplo o **loop for** vai exibir cada um dos endereços IP em um padrão de texto simples.
 
 ```python
 #!/usr/bin/env python3
@@ -137,7 +137,7 @@ for IP_ALVO in lista_ip_sem_duplicados:
     
 <details><summary>...</summary>
 
-Adicionando biblioteca `ipaddress` podemos verificar o tipo de endereço IP que esta sendo tratado no loop, dessa forma podemos selecionar apenas endereços públicos para ter melhor aproveitamento dos requests limitados da API do Abuseipdb.
+Adicionando biblioteca `ipaddress` podemos verificar o **tipo de endereço IP** que esta sendo tratado no loop, dessa forma podemos selecionar apenas endereços públicos para ter melhor aproveitamento dos **requests limitados** da API do Abuseipdb.
 
 ```python
 #!/usr/bin/env python3
@@ -176,12 +176,12 @@ for IP_ALVO in lista_ip_sem_duplicados:
         print(f"IP publico elegivel ao request na API -> {IP_ALVO}")
 ```
 
-Assim temos nosso código Python que realiza os seguntes passos:
+Assim temos o código Python que realiza os seguintes passos:
 
  - [x] Interage com o sistema operacional.
- - [x] Extrai endereços IP de trechos de logs.
+ - [x] Extrai endereços IPv4 dos logs SSH.
  - [x] Estrutura os dados coletados.
- - [x] Verifica o tipo de IPv4.
+ - [x] Identifica endereços IPv4 públicos.
 
 </details>
 
