@@ -94,7 +94,7 @@ import re
 import ipaddress
 import requests
 API_URL = "https://api.abuseipdb.com/api/v2/check"
-CHAVE_API = "fffab400e2a3bca2bc696557fe108660f7a2b6c2ca46e01ba3b18ba25337781e703c1161213c43ea6"
+CHAVE_API = "ffab400e2a3bca2bc696557fe108660f7a2b6c2ca46e01ba3b18ba25337781e703c1161213c43ea6"
 DIAS_BUSCADOS = 365
 COMANDO_LINUX = 'journalctl -u ssh --no-pager'
 resultado_comando = subprocess.run(COMANDO_LINUX.split(), universal_newlines=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
